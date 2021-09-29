@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+  }
+
+nav {
+    text-align: end;
+    background-color: #8eb48e;
+    padding: 1em;
+  }
+
+a {
+    margin-right: 1em;
+    color: #ffffff;  
+  }
+
+.kitty {
+    float: left;
+    font-size: 26px;
+}
