@@ -63,7 +63,7 @@ const handleYearChange = (event) => {
             </div>
         
           <div className="question">
-             <p>Cats age much faster than many people think! <br />
+             <p>Cats age much faster than many people think! <br /><br />
                 Have you ever wondered how old your kitty is in cat years?</p>
           </div>
 
@@ -71,33 +71,33 @@ const handleYearChange = (event) => {
              <form onSubmit={handleSubmit}>
               
             <div className="input-container">
-                Enter your cat's age here: 
-                <div className="input"></div>
-                <input
-                 type="number"
-                  name="years"
-                 className="years"
-                 value={years}
-                  placeholder="0"
-                  onChange={handleYearChange}
-                  min="0"
-                  max="30"
-              />years
+                <div className="input">
+                 Enter your cat's age here: 
+                    <input
+                    type="number"
+                    name="years"
+                    className="years"
+                    value={years}
+                    placeholder="0"
+                    onChange={handleYearChange}
+                    min="0"
+                    max="30"
+              />years</div>
               <div className="results-box">
                 <h2>Your Kitty's Age In Cat Years:</h2>
                  {humanAge !== null && (
                 <div className="result-display">
-                  
-                  <p className="human-age">{humanAge} years</p>
+                  <div className="human-age">{humanAge} years</div>
                 </div>
               )}</div>
             </div>
             <br />
             <button type="submit">Calculate</button>
           </form>
-        </div></div>
+        </div>
+        </div>
       </main>
-      <footer className="App-footer">Created by <a href="https://www.linkedin.com/in/heathersmith17/"> Heather Smith </a> © 2025</footer>
+      <footer className="footer">Created by <a href="https://www.linkedin.com/in/heathersmith17/"> Heather Smith </a> © 2025</footer>
     </div>
   );
 }

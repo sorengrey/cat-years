@@ -30,6 +30,7 @@ button {
   border-radius: 10px;
   border: none;
   margin-bottom: 20px;
+  margin-left: 20px;
   cursor: url('./cursor.png') 24 24, auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -51,27 +52,22 @@ main {
   min-height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  max-height: 200px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
 
-.App-footer {
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 45%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+footer {
   margin-top: auto;
   background-color: #282c34;
   display: flex;
@@ -81,17 +77,6 @@ main {
   font-size: calc(6px + 1vmin);
   color: white;
   padding: 10px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 .form-container {
@@ -110,14 +95,28 @@ main {
 form {
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
-  padding-top: 20px;
+  align-items: space-between;
+  justify-content: center;
   background: white;
-  cursor: url('./cursor.png') 24 24, auto;
+  /* cursor: url('./cursor.png') 24 24, auto; */
   border-radius: 10px;
 }
 
+h2 {
+  text-align: center;
+}
+
+.human-age {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
 
 .input-container {
   display: flex;
@@ -125,9 +124,9 @@ form {
   align-items: center;
   justify-content: center;
   padding-top: 20px;
-  cursor: url('./cursor.png') 24 24, auto;
+  padding-left: 20px;
+  /* cursor: url('./cursor.png') 24 24, auto; */
 }
-
 
 .kittyphoto {
   align-items: left;
@@ -140,7 +139,7 @@ p {
 }
 
 .results-box {
-  margin-left: 20px;
+ /* margin-left: 20px; */
  border-left: solid 1px #808388;
 }
 
@@ -160,4 +159,43 @@ p {
 
 .years {
   margin-right: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    align-items: center;
+  }
+
+  .kittyphoto {
+    align-self: center;
+  }
+
+  .kittyphoto img {
+    max-width: 180px;     /* scale the image down on mobile */
+    height: auto;         /* maintain aspect ratio */
+  }
+
+  .question,
+  .form-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  button {
+    margin-left: 0;
+  }
+
+  footer {
+    width: 100vw;                /* ensures full viewport width */
+    margin-left: calc(50% - 50vw); /* cancels out container centering */
+    border-radius: 0;            /* makes sure it spans edge to edge */
+  }
 }
