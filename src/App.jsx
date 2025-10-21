@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import kittyphoto from "./cat-photo.jpg";
+import kittyphoto from "./cat-photo.png";
 import "./App.css";
 
 function calculateCatAgeFromYears(catYears) {
@@ -26,12 +26,23 @@ function calculateCatAgeFromYears(catYears) {
 }
 
 export default function App() {
-  const [years, setYears] = useState(0);
+  const [years, setYears] = useState('');
   const [humanAge, setHumanAge] = useState(null);
 
-  const handleYearChange = (event) => {
-    const newYears = Math.max(0, parseInt(event.target.value, 10) || 0);
-    setYears(newYears);
+const handleYearChange = (event) => {
+    const inputValue = event.target.value;
+    
+    // Check if the input is empty string or a valid number.
+    // If empty, set years to '', allowing the field to look clear.
+    if (inputValue === '') {
+        setYears('');
+        // Optional: Also clear the result when the input is cleared
+        setHumanAge(null); 
+    } else {
+        // Convert to number, ensuring it's not less than 0
+        const newYears = Math.max(0, parseInt(inputValue, 10) || 0);
+        setYears(newYears);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -45,37 +56,41 @@ export default function App() {
     <div className="App">
       <main>
         <div className="container">
-        <div className="kittyphoto">
-          <img
-            src={kittyphoto}
-            alt="an orange tabby cat wearing purple sunglasses"
-          />
-        </div>
+            <div className="kittyphoto">
+             <img
+              src={kittyphoto}
+              alt="an orange tabby cat wearing purple sunglasses"/>
+            </div>
         
           <div className="question">
-             <p>Have you ever wondered how old your kitty is in cat years?</p>
+             <p>Cats age much faster than many people think! <br />
+                Have you ever wondered how old your kitty is in cat years?</p>
           </div>
 
             <div className="form-container">
              <form onSubmit={handleSubmit}>
-              Enter your cat's age in years here:
-            <div className="input">
-              <input
-                type="number"
-                name="years"
-                className="years"
-                // placeholder="Years"
-                value={years}
-                onChange={handleYearChange}
-                min="0"
-                max="30"
-              />
-              {humanAge !== null && (
+              
+            <div className="input-container">
+                Enter your cat's age here: 
+                <div className="input"></div>
+                <input
+                 type="number"
+                  name="years"
+                 className="years"
+                 value={years}
+                  placeholder="0"
+                  onChange={handleYearChange}
+                  min="0"
+                  max="30"
+              />years
+              <div className="results-box">
+                <h2>Your Kitty's Age In Cat Years:</h2>
+                 {humanAge !== null && (
                 <div className="result-display">
-                  <h2>Your Cat's Age In Cat Years:</h2>
+                  
                   <p className="human-age">{humanAge} years</p>
                 </div>
-              )}
+              )}</div>
             </div>
             <br />
             <button type="submit">Calculate</button>
