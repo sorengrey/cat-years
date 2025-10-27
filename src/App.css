@@ -9,6 +9,7 @@ body,
 #root { 
   height: 100%;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -73,10 +74,12 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: center;
   justify-content: center;
   font-size: calc(6px + 1vmin);
   color: white;
   padding: 10px;
+  width: 100%;
 }
 
 .form-container {
@@ -102,20 +105,23 @@ form {
   border-radius: 10px;
 }
 
-h2 {
-  text-align: center;
-}
-
 .human-age {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 10px;
   text-align: center;
 }
 
 .input {
   display: flex;
   flex-direction: column;
+  min-width: 200px;
+}
+
+input {
+  margin-top: 10px;
+  max-width: 40px;
+  align-self: center;
+  height: 30px;
 }
 
 .input-container {
@@ -123,9 +129,15 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
   padding-left: 20px;
-  /* cursor: url('./cursor.png') 24 24, auto; */
+}
+
+.input-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .kittyphoto {
@@ -134,12 +146,8 @@ h2 {
   margin-bottom: -3px;
 }
 
-p {
-  text-align: left;
-}
-
 .results-box {
- /* margin-left: 20px; */
+ padding: 20px;
  border-left: solid 1px #808388;
 }
 
@@ -149,16 +157,20 @@ p {
 }
 
 .question {
+  font-size: 20px;
+  font-weight: bold;
   background: white;
+  color: #333333;
   padding: 20px;
   text-align: center;
   border-radius: 10px;
   width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .years {
   margin-right: 10px;
+  font-size: 24px;
 }
 
 

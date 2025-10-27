@@ -63,8 +63,7 @@ const handleYearChange = (event) => {
             </div>
         
           <div className="question">
-             <p>Cats age much faster than many people think! <br /><br />
-                Have you ever wondered how old your kitty is in cat years?</p>
+                Have you ever wondered how old your kitty is in cat years?
           </div>
 
             <div className="form-container">
@@ -73,6 +72,7 @@ const handleYearChange = (event) => {
             <div className="input-container">
                 <div className="input">
                  Enter your cat's age here: 
+                 <div className="input-line">
                     <input
                     type="number"
                     name="years"
@@ -82,7 +82,7 @@ const handleYearChange = (event) => {
                     onChange={handleYearChange}
                     min="0"
                     max="30"
-              />years</div>
+              />years</div></div>
               <div className="results-box">
                 <h2>Your Kitty's Age In Cat Years:</h2>
                  {humanAge !== null && (
