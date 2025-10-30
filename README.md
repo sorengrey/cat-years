@@ -1,4 +1,4 @@
-Cat Years
+## Cat Years
 
 ![a screenshot of the application](./src/screenshot.png)
 
