@@ -12,10 +12,9 @@ body,
   font-family: 'Lato', sans-serif;
 }
 
-body {
-  /* Retain the existing beautiful background gradient */
+body {  
   background-color: #cff8fe;
-background-image: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     #cff8fe 0%,
     #cff8fe 50%,
@@ -59,7 +58,6 @@ main {
   min-height: 100%;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -73,6 +71,7 @@ main {
 .kittyphoto {
   margin-bottom: -4px;
   max-width: 500px;
+  align-self: flex-start;
 }
 
 .question {
@@ -137,8 +136,8 @@ form {
 
 
 input[type="number"] {
-  width: 50px;
-  max-width: 50px;
+  /* width: 50px; */
+  max-width: 60px;
   height: 35px;
   text-align: center;
   font-size: 22px;
@@ -185,7 +184,7 @@ h2 {
   font-size: 30px;
   font-weight: 900; 
   color: #333333;
-  margin: 0;
+  margin-top: 5px;
 }
 
 .action-area {
@@ -209,6 +208,53 @@ footer {
   width: 100%;
 }
 
+/* --- Media Query (Tablet) --- */
+
+@media (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+
+  .kittyphoto {
+    margin-left: 60px;
+  }
+
+  .kittyphoto img {
+    max-width: 300px;
+  }
+
+  .question {
+    font-size: 18px;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .results-box {
+    border-left: none;
+    border-top: 1px solid #ddd;
+    padding-left: 0;
+    padding-top: 15px;
+    align-items: center;
+  }
+
+  .input-line {
+    justify-content: center;
+  }
+
+  .action-area {
+    margin-top: 15px;
+  }
+
+  footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-radius: 0;
+  }
+}
+
 /* --- Media Query (Mobile) --- */
 
 @media (max-width: 600px) {
@@ -225,6 +271,11 @@ footer {
     max-width: 200px;
   }
 
+  h2 {
+    align-self: center;
+  }
+
+
   .question {
     font-size: 16px;
   }
@@ -240,6 +291,8 @@ footer {
     border-top: 1px solid #ddd; /* Add a top border for separation */
     padding-left: 0;
     padding-top: 15px;
+    margin-bottom: 15px;
+    align-items: center;
   }
 
   .input-line {

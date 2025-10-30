@@ -82,12 +82,14 @@ const handleYearChange = (event) => {
                     onChange={handleYearChange}
                     min="0"
                     max="30"
-              />years</div></div>
+              />years</div>
+              </div>
+              
               <div className="results-box">
                 <h2>Cat Years:</h2>
                  {humanAge !== null && (
                 <div className="result-display">
-                  <div className="human-age">{humanAge} years</div>
+                  <div className="human-age">{humanAge}</div>
                 </div>
               )}</div>
             </div>
