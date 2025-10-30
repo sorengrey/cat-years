@@ -6,34 +6,40 @@
 
 html,
 body,
-#root { 
+#root {
   height: 100%;
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
 
 body {
+  /* Retain the existing beautiful background gradient */
   background-color: #cff8fe;
 background-image: linear-gradient(
     to bottom,
     #cff8fe 0%,
-    #cff8fe 50%, 
-    #61a5b0 100%  
+    #cff8fe 50%,
+    #61a5b0 100%
   );
 }
 
+
 button {
-  height: 50px;
-  width: 150px;
+  height: 45px; 
+  width: 140px; 
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px; 
   background: #61dafb;
-  border-radius: 10px;
+  color: #282c34; 
+  border-radius: 8px;
   border: none;
-  margin-bottom: 20px;
-  margin-left: 20px;
   cursor: url('./cursor.png') 24 24, auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  transition: background 0.3s; /* Smooth hover transition */
+}
+
+button:hover {
+    background: #4ac7e8;
 }
 
 a {
@@ -53,19 +59,140 @@ main {
   min-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
   width: 45%;
-  margin: auto;
+  max-width: 500px; 
+  margin: 40px auto;
+  padding: 0;
+}
+
+.kittyphoto {
+  margin-bottom: -4px;
+  max-width: 500px;
+}
+
+.question {
+  font-size: 18px; 
+  font-weight: bold;
+  background: white;
+  color: #333333;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  border-radius: 10px;
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+  align-items: center;
+  width: 90%;
+  max-width: 450px;
+  padding: 10px 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: unset;
+}
+
+.input-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+input[type="number"] {
+  width: 50px;
+  max-width: 50px;
+  height: 35px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border: 2px solid #61dafb;
+  border-radius: 4px;
+  padding: 0 5px;
+  margin: 0;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #4ac7e8;
+}
+
+.years {
+  margin-right: 0;
+}
+
+.results-box {
+  width: 136px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-left: 1px solid #ddd; 
+  padding-left: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  color: #61a5b0;
+  margin: 0;
+}
+
+.result-display {
+  margin: 0;
+}
+
+.human-age {
+  font-size: 30px;
+  font-weight: 900; 
+  color: #333333;
+  margin: 0;
+}
+
+.action-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 footer {
@@ -82,132 +209,50 @@ footer {
   width: 100%;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: row;
-  align-items: space-between;
-  justify-content: center;
-  padding-top: 20px;
-  background: white;
-  margin-top: 20px;
-  border-radius: 10px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: center;
-  background: white;
-  /* cursor: url('./cursor.png') 24 24, auto; */
-  border-radius: 10px;
-}
-
-.human-age {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.input {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-}
-
-input {
-  margin-top: 10px;
-  max-width: 40px;
-  align-self: center;
-  height: 30px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-left: 20px;
-}
-
-.input-line {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.kittyphoto {
-  align-items: left;
-  justify-content: left;
-  margin-bottom: -3px;
-}
-
-.results-box {
- padding: 20px;
- border-left: solid 1px #808388;
-}
-
-.results-display {
-  margin-left: 20px;
-  text-align: center;
-}
-
-.question {
-  font-size: 20px;
-  font-weight: bold;
-  background: white;
-  color: #333333;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.years {
-  margin-right: 10px;
-  font-size: 24px;
-}
-
+/* --- Media Query (Mobile) --- */
 
 @media (max-width: 600px) {
   .container {
     width: 90%;
-    align-items: center;
+    margin-top: 20px;
   }
 
   .kittyphoto {
-    align-self: center;
+    margin-left: 80px;
   }
 
   .kittyphoto img {
-    max-width: 180px;     /* scale the image down on mobile */
-    height: auto;         /* maintain aspect ratio */
+    max-width: 200px;
   }
 
-  .question,
-  .form-container {
-    width: 100%;
-    text-align: center;
+  .question {
+    font-size: 16px;
   }
 
   .input-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 20px;
+    padding: 10px 0 0 0;
   }
 
-  button {
-    margin-left: 0;
+  .results-box {
+    border-left: none;
+    border-top: 1px solid #ddd; /* Add a top border for separation */
+    padding-left: 0;
+    padding-top: 15px;
+  }
+
+  .input-line {
+      justify-content: center;
+  }
+
+  .action-area {
+    margin-top: 15px;
   }
 
   footer {
-    width: 100vw;                /* ensures full viewport width */
-    margin-left: calc(50% - 50vw); /* cancels out container centering */
-    border-radius: 0;            /* makes sure it spans edge to edge */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    border-radius: 0;
   }
 }

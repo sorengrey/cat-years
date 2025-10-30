@@ -84,15 +84,16 @@ const handleYearChange = (event) => {
                     max="30"
               />years</div></div>
               <div className="results-box">
-                <h2>Your Kitty's Age In Cat Years:</h2>
+                <h2>Cat Years:</h2>
                  {humanAge !== null && (
                 <div className="result-display">
                   <div className="human-age">{humanAge} years</div>
                 </div>
               )}</div>
             </div>
-            <br />
-            <button type="submit">Calculate</button>
+         <div className="action-area">
+                    <button type="submit">Calculate</button>
+                </div>
           </form>
         </div>
         </div>
