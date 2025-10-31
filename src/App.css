@@ -288,7 +288,7 @@ footer {
 
   .results-box {
     border-left: none;
-    border-top: 1px solid #ddd; /* Add a top border for separation */
+    border-top: 1px solid #ddd;
     padding-left: 0;
     padding-top: 15px;
     margin-bottom: 15px;
